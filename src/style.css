@@ -1,0 +1,13 @@
+.table td, .table th {
+    border: none;
+}
+
+table.table.table-striped {
+    border: 1px solid #cccccc;
+}
+table.table.table-striped>thead>tr{
+    background-color: #3f50b5;
+}
+table.table.table-striped>thead>tr>th{
+    color: white;
+}

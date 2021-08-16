@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getTodos } from './api'
+import './style.css'
 
 export const TodoList = () => {
     const [items, setItems] = useState([])
@@ -15,10 +16,11 @@ export const TodoList = () => {
         <div className="container">
             <div className="mt-3">
                 <h3>Todo List</h3>
-                <table className="table table-striped mt-3">
+                <table className="table table-striped  mt-3">
                     <thead>
-                        <tr>
+                        <tr >
                             <th>Text</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -27,6 +29,7 @@ export const TodoList = () => {
                             items.map(todo => (
                                 <tr key={todo._id}>
                                     <td>{todo.text}</td>
+                                    <td>{todo.description}</td>
                                     <td>
                                         <Link to={`/edit/${todo._id}`} >Edit</Link>
                                     </td>

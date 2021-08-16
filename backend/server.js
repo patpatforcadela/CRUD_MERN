@@ -49,6 +49,7 @@ app.post("/:id", (req, res) => {
         if (!todo) {
             res.status(404).send("Todo not found!")
         } else {
+            todo.description = req.body.description
             todo.text = req.body.text
             todo.save().then(todo => {
                 res.json(todo)
